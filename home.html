@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDIT: page title and description (shows in browser tabs and search results) -->
+  <title>Your Name | Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, a Computer Information Systems student focused on data analysis and data warehousing.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top">Your Name</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO: say what you do and who it helps, in one sentence -->
+    <section class="hero" id="top">
+      <h1>I turn raw data into decisions people can act on.</h1>
+      <p class="lead">
+        I'm [Your Name], a Computer Information Systems student at CPP.
+        I'm building toward a career as a data analyst and data warehouse manager.
+      </p>
+      <p class="actions">
+        <a class="button" href="#projects">See my projects</a>
+        <!-- EDIT: put your resume PDF in this folder and match the file name -->
+        <a class="button button-quiet" href="resume.pdf">Download resume</a>
+      </p>
+    </section>
+
+    <!-- ABOUT: 2 short paragraphs. Who you are, what you're aiming for. -->
+    <section id="about">
+      <h2>About me</h2>
+      <div class="prose">
+        <p>
+          [Write 2 to 3 sentences about your background: your major, what pulled you toward data,
+          and the kind of problems you enjoy solving.]
+        </p>
+        <p>
+          [Write 1 to 2 sentences about what you're looking for: an internship, an entry-level
+          analyst role, or a warehouse or BI team you'd like to join.]
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS: one row per project. Copy a <tr> block to add more. -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="section-note">Each project links to a full write-up with the question, the method, and the findings.</p>
+
+      <table class="projects">
+        <caption class="visually-hidden">Selected data projects</caption>
+        <thead>
+          <tr>
+            <th scope="col">Project</th>
+            <th scope="col">Focus</th>
+            <th scope="col">Tools</th>
+            <th scope="col">What I found or built</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" data-label="Project">
+              <!-- EDIT: replace # with your GitHub repo link once it exists -->
+              <a href="#">Sales Performance Dashboard</a>
+            </th>
+            <td data-label="Focus">Data analysis</td>
+            <td data-label="Tools">SQL, Excel, Tableau</td>
+            <td data-label="Result">[One sentence: the question you answered and the key finding.]</td>
+          </tr>
+          <tr>
+            <th scope="row" data-label="Project">
+              <a href="#">Retail Data Warehouse</a>
+            </th>
+            <td data-label="Focus">Data warehousing</td>
+            <td data-label="Tools">SQL Server, star schema, ETL</td>
+            <td data-label="Result">[One sentence: the business scenario and what your design made possible.]</td>
+          </tr>
+          <tr>
+            <th scope="row" data-label="Project">
+              <a href="#">[Your next project]</a>
+            </th>
+            <td data-label="Focus">[Analysis or warehousing]</td>
+            <td data-label="Tools">[Tools you used]</td>
+            <td data-label="Result">[What you found or built.]</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SKILLS: list only what you can talk about in an interview -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-groups">
+        <div>
+          <h3>Analysis</h3>
+          <ul>
+            <li>SQL queries and joins</li>
+            <li>Excel and pivot tables</li>
+            <li>Data cleaning</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Data warehousing</h3>
+          <ul>
+            <li>Dimensional modeling</li>
+            <li>ETL basics</li>
+            <li>Database design</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li>Tableau or Power BI</li>
+            <li>Git and GitHub</li>
+            <li>Visual Studio</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT: make it easy to reach you -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>I'm open to internships and entry-level roles. The best way to reach me is email.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a href="https://github.com/your-username">github.com/your-username</a></li>
+        <li><a href="https://www.linkedin.com/in/your-profile">linkedin.com/in/your-profile</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Your Name</p>
+  </footer>
+</body>
+</html>

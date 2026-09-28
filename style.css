@@ -1,0 +1,153 @@
+/* ---------- Design tokens: change these to re-theme the whole site ---------- */
+:root {
+  --ink: #16212b;
+  --muted: #4f5f6e;
+  --paper: #fbfcfd;
+  --mist: #edf2f6;
+  --rule: #d3dce4;
+  --accent: #0b6e6e;
+  --accent-dark: #084f4f;
+  --serif: Cambria, Georgia, "Times New Roman", serif;
+  --sans: "Segoe UI", Calibri, Arial, sans-serif;
+  --page: 62rem;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:hover { color: var(--accent-dark); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.skip {
+  position: absolute; left: 1rem; top: -4rem;
+  background: var(--ink); color: #fff; padding: 0.5rem 1rem; z-index: 10;
+}
+.skip:focus { top: 1rem; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding: 0.9rem max(1.25rem, calc((100% - var(--page)) / 2));
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.brand {
+  font-family: var(--serif); font-weight: 700; font-size: 1.2rem;
+  color: var(--ink); text-decoration: none;
+}
+.site-header nav { display: flex; gap: 1.5rem; }
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover { color: var(--accent); text-decoration: underline; }
+
+/* ---------- Layout ---------- */
+main > section {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+main > section:last-child { border-bottom: 0; }
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.2; margin: 0; }
+h2 { font-size: 1.9rem; margin-bottom: 1.25rem; }
+h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+.prose { max-width: 40rem; }
+.prose p { margin: 0 0 1rem; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 5.5rem; padding-bottom: 5rem; }
+.hero h1 {
+  font-size: clamp(2.3rem, 5.5vw, 3.75rem);
+  max-width: 17ch;
+  letter-spacing: -0.01em;
+}
+.lead { max-width: 38rem; margin: 1.5rem 0 0; font-size: 1.2rem; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 0; }
+
+.button {
+  display: inline-block; padding: 0.7rem 1.4rem;
+  background: var(--accent); color: #fff;
+  border: 2px solid var(--accent); border-radius: 0.3rem;
+  font-weight: 600; text-decoration: none;
+}
+.button:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+.button-quiet { background: transparent; color: var(--accent); }
+.button-quiet:hover { background: var(--mist); color: var(--accent-dark); border-color: var(--accent-dark); }
+
+/* ---------- Projects table ---------- */
+.section-note { margin: -0.5rem 0 1.75rem; color: var(--muted); max-width: 40rem; }
+
+.projects {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid var(--ink);
+  text-align: left;
+}
+.projects thead th {
+  font-family: var(--serif); font-size: 0.95rem;
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 1px solid var(--ink);
+  color: var(--muted);
+}
+.projects td, .projects tbody th {
+  padding: 1.1rem 1rem 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.projects tbody th { font-family: var(--serif); font-size: 1.1rem; }
+.projects tbody tr:hover { background: var(--mist); }
+
+/* ---------- Skills ---------- */
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 2rem;
+}
+.skill-groups ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+.skill-groups li { margin-bottom: 0.25rem; }
+
+/* ---------- Contact and footer ---------- */
+.contact-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.contact-list li { margin-bottom: 0.4rem; }
+
+.site-footer {
+  max-width: var(--page); margin: 0 auto; padding: 2rem 1.25rem 3rem;
+  color: var(--muted); font-size: 0.95rem;
+}
+.site-footer p { margin: 0; }
+
+/* ---------- Small screens: turn each table row into a stacked block ---------- */
+@media (max-width: 44rem) {
+  .projects thead { position: absolute; left: -9999px; }
+  .projects, .projects tbody, .projects tr, .projects td, .projects tbody th { display: block; }
+  .projects tr { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+  .projects td, .projects tbody th { border: 0; padding: 0.15rem 0; }
+  .projects td::before {
+    content: attr(data-label) ": ";
+    font-weight: 600; color: var(--ink);
+  }
+  .projects tbody tr:hover { background: transparent; }
+  .site-header nav { gap: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
